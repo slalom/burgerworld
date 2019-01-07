@@ -1,8 +1,7 @@
 package com.slalom.pos.controller;
 
-import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
-import java.util.List;
 import java.util.UUID;
 
 import org.springframework.web.bind.annotation.PathVariable;
@@ -21,8 +20,8 @@ public class ItemController {
 	HashMap<String, Item> itemsHashMap = new HashMap();
 
 	@RequestMapping(value = "items", method = RequestMethod.GET)
-	public List<Item> list(){
-		return new ArrayList<Item>();
+	public Collection<Item> list(){
+		return itemsHashMap.values();
 	}
 	
 	@RequestMapping(value = "items", method = RequestMethod.POST)
@@ -30,7 +29,7 @@ public class ItemController {
 		String generatedItemId = UUID.randomUUID().toString();
 		Item itemToAdd = new Item(generatedItemId, item.getName(), item.getPrice());
 		itemsHashMap.put(itemToAdd.getId(), itemToAdd);
-		return item;
+		return itemToAdd;
 	}
 	
 	@RequestMapping(value = "items/{id}", method = RequestMethod.GET)
