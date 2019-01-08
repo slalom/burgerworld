@@ -51,11 +51,18 @@ public class ItemController {
 	
 	@RequestMapping(value = "items/{id}", method = RequestMethod.PUT)
 	public Item update(@PathVariable String id, @RequestBody Item item) throws Exception {
-		
-		if(id != item.getId())
-			throw new Exception("ID passed in is not the same as " + item.getId());
+		Item itemToUpdate = itemRepo.getById(id);
+
+		if(itemToUpdate == null) {
+			throw new Exception("ID: " + id + " does not exist");
+		}
+
+		if (id.compareTo(item.getId()) == 1)
+			throw new Exception("ID passed in is " + id + " and is not the same as " + item.getId());
+
 		itemRepo.save(item);
 		return item;
+
 	}
 	
 	@RequestMapping(value = "items/{id}", method = RequestMethod.DELETE)

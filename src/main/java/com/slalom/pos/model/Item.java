@@ -26,7 +26,6 @@ public class Item {
 	public String getName() {
 		return name;
 	}
-
 	
 	public Double getPrice() {
 		return price;

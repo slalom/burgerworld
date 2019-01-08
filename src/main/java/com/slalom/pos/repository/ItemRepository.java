@@ -11,5 +11,6 @@ public interface ItemRepository extends CassandraRepository<Item, String> {
  
 	@AllowFiltering
 	public List<Item> getByName(String itemName);
+	public Item getById(String itemId);
  
 }
