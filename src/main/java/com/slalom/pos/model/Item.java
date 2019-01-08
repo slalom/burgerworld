@@ -1,10 +1,17 @@
 package com.slalom.pos.model;
 
+import org.springframework.data.cassandra.core.mapping.PrimaryKey;
+import org.springframework.data.cassandra.core.mapping.Table;
+
+ 
+@Table
 public class Item {
 	
+	@PrimaryKey
+	private String id;	
 	private String name;
 	private Double price;
-	private String id;
+
 	
 	public Item(String id, String name, Double price) {
 		this.id = id;

@@ -17,7 +17,7 @@ import com.slalom.pos.model.Item;
 @RequestMapping("api/v1/")
 public class ItemController {
 	
-	HashMap<String, Item> itemsHashMap = new HashMap();
+	HashMap<String, Item> itemsHashMap = new HashMap<String, Item>();
 
 	@RequestMapping(value = "items", method = RequestMethod.GET)
 	public Collection<Item> list(){
