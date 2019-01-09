@@ -7,8 +7,10 @@ import com.slalom.pos.service.interfaces.IOrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
+import org.springframework.stereotype.Service;
 
 
+@Service
 public class OrderService implements IOrderService {
     @Autowired
     private OrderRepository orderRepository;
@@ -18,7 +20,7 @@ public class OrderService implements IOrderService {
     }
 
     public List<Order> getOrders() {
-        return orderRepository.getOrders();
+        return orderRepository.findAll();
     }
 
     public Order getOrderById(String orderId) {
@@ -40,8 +42,8 @@ public class OrderService implements IOrderService {
             throw new Exception("ID: " + orderId + " does not exist");
         }
 
-        if (orderId.compareTo(itemToUpdate.getOrderId()) == 1)
-            throw new Exception("ID passed in is " + orderId + " and is not the same as " + order.getOrderId());
+        if (orderId.compareTo(itemToUpdate.getId()) == 1)
+            throw new Exception("ID passed in is " + orderId + " and is not the same as " + order.getId());
 
         orderRepository.save(itemToUpdate);
         return order;

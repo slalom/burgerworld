@@ -49,9 +49,9 @@ public class OrderController {
 
     @RequestMapping(value = "order/{orderId}", method = RequestMethod.PUT)
     public Order update(@PathVariable String orderId, @RequestBody Order order) throws Exception {
-        Order orderToUpdate = orderService.getOrderById(order.getOrderId());
+        Order orderToUpdate = orderService.getOrderById(order.getId());
 
-        orderService.updateOrder(order.getOrderId(), order);
+        orderService.updateOrder(order.getId(), order);
         return order;
 
     }
