@@ -11,4 +11,27 @@ public class Order {
     private String poNumber;
     private String customerName;
     private Date orderDate;
+
+    public Order(String orderId, String poNumber, String customerName, Date orderDate) {
+        this.orderId = orderId;
+        this.poNumber = poNumber;
+        this.customerName = customerName;
+        this.orderDate = orderDate;
+    }
+
+    public String getOrderId() {
+        return orderId;
+    }
+
+    public String getPoNumber() {
+        return poNumber;
+    }
+
+    public String getCustomerName() {
+        return customerName;
+    }
+
+    public Date getOrderDate() {
+        return orderDate;
+    }
 }
