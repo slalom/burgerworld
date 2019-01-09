@@ -51,13 +51,6 @@ public class OrderController {
     public Order update(@PathVariable String orderId, @RequestBody Order order) throws Exception {
         Order orderToUpdate = orderService.getOrderById(order.getOrderId());
 
-        if(orderToUpdate == null) {
-            throw new Exception("ORDERID: " + orderId + " does not exist");
-        }
-
-        if (orderId.compareTo(order.getOrderId()) == 1)
-            throw new Exception("ID passed in is " + orderId + " and is not the same as " + order.getOrderId());
-
         orderService.updateOrder(order.getOrderId(), order);
         return order;
 

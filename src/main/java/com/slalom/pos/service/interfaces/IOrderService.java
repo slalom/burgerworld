@@ -9,7 +9,6 @@ public interface IOrderService {
     public Order getOrderById(String orderId);
     public Order getOrderByPoNumber(String poNumber);
     public Order createOrder(Order order);
-    public Order updateOrder(String orderId, Order order);
+    public Order updateOrder(String orderId, Order order) throws Exception;
     public void deleteOrder(String orderId);
-
 }
