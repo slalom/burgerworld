@@ -37,7 +37,7 @@ public class OrderController {
 
     @RequestMapping(value = "order/getOrderByPoNumber", method = RequestMethod.GET)
     public Order getOrderByPoNumber(@RequestParam(value = "poNumber", required=true) String poNumber){
-        return orderService.getOrderByPoNumber(poNumber);
+        return orderService.getByPoNumber(poNumber);
     }
 
     @RequestMapping(value = "order", method = RequestMethod.POST)

@@ -57,7 +57,7 @@ public class ItemController {
 			throw new Exception("ID: " + id + " does not exist");
 		}
 
-		if (id.compareTo(item.getId()) == 1)
+		if (id.compareTo(item.getId()) != 0)
 			throw new Exception("ID passed in is " + id + " and is not the same as " + item.getId());
 
 		itemRepo.save(item);

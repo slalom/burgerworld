@@ -24,11 +24,11 @@ public class OrderService implements IOrderService {
     }
 
     public Order getOrderById(String orderId) {
-        return orderRepository.getOrderById(orderId);
+        return orderRepository.getById(orderId);
     }
 
-    public Order getOrderByPoNumber(String poNumber) {
-        return orderRepository.getOrderByPoNumber(poNumber);
+    public Order getByPoNumber(String poNumber) {
+        return orderRepository.getByPoNumber(poNumber);
     }
 
     public Order createOrder(Order order) {
@@ -36,13 +36,13 @@ public class OrderService implements IOrderService {
     }
 
     public Order updateOrder(String orderId, Order order) throws Exception {
-        Order itemToUpdate = orderRepository.getOrderById(orderId);
+        Order itemToUpdate = orderRepository.getById(orderId);
 
         if(itemToUpdate == null) {
             throw new Exception("ID: " + orderId + " does not exist");
         }
 
-        if (orderId.compareTo(itemToUpdate.getId()) == 1)
+        if (orderId.compareTo(itemToUpdate.getId()) != 0)
             throw new Exception("ID passed in is " + orderId + " and is not the same as " + order.getId());
 
         orderRepository.save(itemToUpdate);
