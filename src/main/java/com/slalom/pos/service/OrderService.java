@@ -35,18 +35,18 @@ public class OrderService implements IOrderService {
         return orderRepository.insert(order);
     }
 
-    public ProductOrder updateOrder(String orderId, ProductOrder order) throws Exception {
-        ProductOrder itemToUpdate = orderRepository.getById(orderId);
+    public ProductOrder updateOrder(String orderId, ProductOrder productOrder) throws Exception {
+        ProductOrder existingOrder = orderRepository.getById(orderId);
 
-        if(itemToUpdate == null) {
+        if(existingOrder == null) {
             throw new Exception("ID: " + orderId + " does not exist");
         }
 
-        if (orderId.compareTo(itemToUpdate.getId()) != 0)
-            throw new Exception("ID passed in is " + orderId + " and is not the same as " + order.getId());
+        if (orderId.compareTo(existingOrder.getId()) != 0)
+            throw new Exception("ID passed in is " + orderId + " and is not the same as " + productOrder.getId());
 
-        orderRepository.save(itemToUpdate);
-        return order;
+        orderRepository.save(productOrder);
+        return productOrder;
     }
 
     public void deleteOrder(String orderId) {
