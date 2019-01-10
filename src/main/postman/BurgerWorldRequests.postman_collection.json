@@ -1,15 +1,12 @@
 {
 	"info": {
-		"_postman_id": "7104afdb-3059-4930-81c3-53d37b9c35bf",
+		"_postman_id": "0ef11465-72e3-49e3-9d7c-2e80e01813f7",
 		"name": "BurgerWorldRequests",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
 			"name": "localhost:8080/api/v1/items",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
 			"request": {
 				"auth": {
 					"type": "basic"
@@ -21,7 +18,10 @@
 						"value": "ROM831ESV"
 					}
 				],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"url": {
 					"raw": "localhost:8080/api/v1/items",
 					"host": [
@@ -188,9 +188,6 @@
 		},
 		{
 			"name": "localhost:8080/api/v1productorder",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
 			"request": {
 				"auth": {
 					"type": "basic"
@@ -202,7 +199,10 @@
 						"value": "ROM831ESV"
 					}
 				],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"url": {
 					"raw": "localhost:8080/productorder",
 					"host": [
@@ -226,7 +226,10 @@
 								"value": "ROM831ESV"
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "localhost:8080/productorder",
 							"host": [
