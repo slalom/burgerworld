@@ -38,7 +38,7 @@
 			"response": []
 		},
 		{
-			"name": "localhost:8080/api/v1/items/",
+			"name": "localhost:8080/api/v1/items/ Macbook",
 			"request": {
 				"auth": {
 					"type": "basic"
@@ -75,7 +75,7 @@
 			"response": []
 		},
 		{
-			"name": "localhost:8080/api/v1/items/",
+			"name": "localhost:8080/api/v1/items/ Surface",
 			"request": {
 				"auth": {
 					"type": "basic"
@@ -110,6 +110,159 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "localhost:8080/api/v1/items/",
+			"request": {
+				"auth": {
+					"type": "basic"
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "G-token",
+						"value": "ROM831ESV"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"Surface Pro\",\n\t\"price\": 666.99\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/items/",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"items",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/api/v1/order/",
+			"request": {
+				"auth": {
+					"type": "basic"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "G-token",
+						"value": "ROM831ESV"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"Surface Pro\",\n\t\"price\": 3499.99\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/order/",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"order",
+						""
+					]
+				},
+				"description": "Add an order"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/api/v1productorder",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "G-token",
+						"value": "ROM831ESV"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "localhost:8080/productorder",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"productorder"
+					]
+				},
+				"description": "productOrder GET"
+			},
+			"response": [
+				{
+					"name": "localhost:8080/api/v1productorder",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "G-token",
+								"value": "ROM831ESV"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "localhost:8080/productorder",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"productorder"
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=UTF-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 10 Jan 2019 19:19:17 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"timestamp\": \"2019-01-10T19:19:17.543+0000\",\n    \"status\": 500,\n    \"error\": \"Internal Server Error\",\n    \"message\": \"Query; CQL [SELECT * FROM productorder;]; unconfigured table productorder; nested exception is com.datastax.driver.core.exceptions.InvalidQueryException: unconfigured table productorder\",\n    \"path\": \"/productorder\"\n}"
+				}
+			]
 		}
 	]
 }
