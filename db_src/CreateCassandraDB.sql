@@ -29,7 +29,7 @@ CREATE KEYSPACE IF NOT EXISTS burger_world
   );
   
   
-    INSERT INTO burger_world.productorders (id, poNumber, customerName, orderDate) VALUES ('order123', 'po1234', 'Nathaniel Davis Jr.', '2019-01-19');
+    INSERT INTO burger_world.productorder (id, poNumber, customerName, orderDate) VALUES ('order123', 'po1234', 'Nathaniel Davis Jr.', '2019-01-19');
   
 /*
   INSERT INTO burger_world.item (id, name, price) VALUES ('nameid', 'name', 1980000);
