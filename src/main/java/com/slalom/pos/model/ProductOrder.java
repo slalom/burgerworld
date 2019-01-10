@@ -5,14 +5,14 @@ import org.springframework.data.cassandra.core.mapping.Table;
 import java.util.Date;
 
 @Table
-public class Order {
+public class ProductOrder {
     @PrimaryKey
     private String id;
     private String poNumber;
     private String customerName;
     private Date orderDate;
 
-    public Order(String orderId, String poNumber, String customerName, Date orderDate) {
+    public ProductOrder(String orderId, String poNumber, String customerName, Date orderDate) {
         this.id = orderId;
         this.poNumber = poNumber;
         this.customerName = customerName;

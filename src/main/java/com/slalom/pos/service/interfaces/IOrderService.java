@@ -1,14 +1,15 @@
 package com.slalom.pos.service.interfaces;
 
+import com.slalom.pos.model.ProductOrder;
+
 import java.util.List;
-import com.slalom.pos.model.Order;
 
 
 public interface IOrderService {
-    public List<Order> getOrders();
-    public Order getOrderById(String orderId);
-    public Order getByPoNumber(String poNumber);
-    public Order createOrder(Order order);
-    public Order updateOrder(String orderId, Order order) throws Exception;
+    public List<ProductOrder> getOrders();
+    public ProductOrder getOrderById(String orderId);
+    public ProductOrder getByPoNumber(String poNumber);
+    public ProductOrder createOrder(ProductOrder order);
+    public ProductOrder updateOrder(String orderId, ProductOrder order) throws Exception;
     public void deleteOrder(String orderId);
 }

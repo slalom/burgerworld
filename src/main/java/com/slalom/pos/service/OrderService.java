@@ -1,7 +1,7 @@
 package com.slalom.pos.service;
 
 import com.slalom.pos.model.Item;
-import com.slalom.pos.model.Order;
+import com.slalom.pos.model.ProductOrder;
 import com.slalom.pos.repository.OrderRepository;
 import com.slalom.pos.service.interfaces.IOrderService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,24 +19,24 @@ public class OrderService implements IOrderService {
         this.orderRepository = orderRepo;
     }
 
-    public List<Order> getOrders() {
+    public List<ProductOrder> getOrders() {
         return orderRepository.findAll();
     }
 
-    public Order getOrderById(String orderId) {
+    public ProductOrder getOrderById(String orderId) {
         return orderRepository.getById(orderId);
     }
 
-    public Order getByPoNumber(String poNumber) {
+    public ProductOrder getByPoNumber(String poNumber) {
         return orderRepository.getByPoNumber(poNumber);
     }
 
-    public Order createOrder(Order order) {
+    public ProductOrder createOrder(ProductOrder order) {
         return orderRepository.insert(order);
     }
 
-    public Order updateOrder(String orderId, Order order) throws Exception {
-        Order itemToUpdate = orderRepository.getById(orderId);
+    public ProductOrder updateOrder(String orderId, ProductOrder order) throws Exception {
+        ProductOrder itemToUpdate = orderRepository.getById(orderId);
 
         if(itemToUpdate == null) {
             throw new Exception("ID: " + orderId + " does not exist");
