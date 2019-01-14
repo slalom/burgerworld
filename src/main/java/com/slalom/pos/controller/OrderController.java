@@ -9,7 +9,7 @@ import java.util.UUID;
 
 
 @RestController
-
+@CrossOrigin
 public class OrderController {
 
     private IOrderService orderService;
