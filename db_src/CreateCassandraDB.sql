@@ -14,11 +14,11 @@ CREATE KEYSPACE IF NOT EXISTS burger_world
    price double
   );
   
-    CREATE TABLE IF NOT EXISTS burger_world.productorders (
+    CREATE TABLE IF NOT EXISTS burger_world.productorder (
    id text PRIMARY KEY, 
    poNumber text, 
    customerName text,
-   orderDate DATE
+   orderDate timestamp
   );
   
   CREATE TABLE IF NOT EXISTS burger_world.orderlineitem (
@@ -29,13 +29,13 @@ CREATE KEYSPACE IF NOT EXISTS burger_world
   );
   
   
-    INSERT INTO burger_world.productorders (id, poNumber, customerName, orderDate) VALUES ('order123', 'po1234', 'Nathaniel Davis Jr.', '2019-01-19');
+    INSERT INTO burger_world.productorder (id, poNumber, customerName, orderDate) VALUES ('order123', 'po1234', 'Nathaniel Davis Jr.', '2019-01-19');
   
-/*
   INSERT INTO burger_world.item (id, name, price) VALUES ('nameid', 'name', 1980000);
   SELECT * FROM burger_world.item;
   
-  SELECT * FROM burger_world.orders
+  
+  SELECT * FROM burger_world.productorder;
+  
   
   SELECT * FROM burger_world.orderlineitem
-*/

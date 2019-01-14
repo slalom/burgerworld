@@ -12,8 +12,8 @@ public class ProductOrder {
     private String customerName;
     private Date orderDate;
 
-    public ProductOrder(String orderId, String poNumber, String customerName, Date orderDate) {
-        this.id = orderId;
+    public ProductOrder(String id, String poNumber, String customerName, Date orderDate) {
+        this.id = id;
         this.poNumber = poNumber;
         this.customerName = customerName;
         this.orderDate = orderDate;
