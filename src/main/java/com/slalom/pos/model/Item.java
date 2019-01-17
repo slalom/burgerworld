@@ -11,12 +11,14 @@ public class Item {
 	private String id;	
 	private String name;
 	private Double price;
+	private String imageFileName;
 
 	
-	public Item(String id, String name, Double price) {
+	public Item(String id, String name, Double price, String imageFileName) {
 		this.id = id;
 		this.name = name;
 		this.price = price;
+		this.imageFileName = imageFileName;
 	}
 	
 	public String getId() {
@@ -29,6 +31,10 @@ public class Item {
 	
 	public Double getPrice() {
 		return price;
+	}
+
+	public String getImageFileName(){
+		return imageFileName;
 	}
 	
 }

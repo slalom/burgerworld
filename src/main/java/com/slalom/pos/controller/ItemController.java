@@ -36,7 +36,7 @@ public class ItemController {
 	@RequestMapping(value = "items", method = RequestMethod.POST)
 	public Item create(@RequestBody Item item) {
 		String generatedItemId = UUID.randomUUID().toString();
-		Item itemToAdd = new Item(generatedItemId, item.getName(), item.getPrice());
+		Item itemToAdd = new Item(generatedItemId, item.getName(), item.getPrice(), item.getImageFileName());
 		return itemRepo.insert(itemToAdd);
 	}
 	
