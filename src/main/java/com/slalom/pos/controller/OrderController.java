@@ -32,7 +32,7 @@ public class OrderController {
     @RequestMapping(value = "productorder", method = RequestMethod.POST)
     public ProductOrder create(@RequestBody ProductOrder order) {
         String generatedOrderId = UUID.randomUUID().toString();
-        ProductOrder orderToAdd = new ProductOrder(generatedOrderId, order.getPoNumber(), order.getCustomerName(), order.getOrderDate());
+        ProductOrder orderToAdd = new ProductOrder(generatedOrderId, order.getPoNumber(), order.getCustomerName(), order.getOrderDate(), order.getOrderLineItems());
         return orderService.createOrder(orderToAdd);
     }
 
