@@ -13,4 +13,20 @@ public class OrderLineItem {
     private String name;
     private Double price;
     private int quantity;
+
+    public void setId(String value) {
+        this.id = value;
+    }
+
+    public void setName(String value) {
+        this.name = value;
+    }
+
+    public void setPrice(Double value) {
+        this.price = value;
+    }
+
+    public void setQuantity(int value) {
+        this.quantity = value;
+    }
 }

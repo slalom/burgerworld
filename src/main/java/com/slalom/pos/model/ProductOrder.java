@@ -26,17 +26,37 @@ public class ProductOrder {
         return id;
     }
 
+    public void setId(String value) {
+        this.id = value;
+    }
+
     public String getPoNumber() {
         return poNumber;
+    }
+
+    public void setPoNumber(String value) {
+        this.poNumber = value;
     }
 
     public String getCustomerName() {
         return customerName;
     }
 
+    public void setCustomerName(String value) {
+        this.customerName = value;
+    }
+
     public Date getOrderDate() {
         return orderDate;
     }
 
+    public void setOrderDate(Date value) {
+        this.orderDate = value;
+    }
+
     public List<OrderLineItem> getOrderLineItems() { return orderLineItems; }
+
+    public void setOrderLineItems(List<OrderLineItem> value){
+        this.orderLineItems = value;
+    }
 }
