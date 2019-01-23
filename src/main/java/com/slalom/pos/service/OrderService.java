@@ -1,12 +1,13 @@
 package com.slalom.pos.service;
 
-import com.slalom.pos.model.Item;
 import com.slalom.pos.model.ProductOrder;
 import com.slalom.pos.repository.OrderRepository;
 import com.slalom.pos.service.interfaces.IOrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
+
+import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 
 
@@ -14,6 +15,9 @@ import org.springframework.stereotype.Service;
 public class OrderService implements IOrderService {
     @Autowired
     private OrderRepository orderRepository;
+
+    @Autowired
+    private KafkaTemplate<String, ProductOrder> kafkaTemplate;
 
     public void OrderService(OrderRepository orderRepo){
         this.orderRepository = orderRepo;
@@ -32,7 +36,9 @@ public class OrderService implements IOrderService {
     }
 
     public ProductOrder createOrder(ProductOrder order) {
-        return orderRepository.insert(order);
+        kafkaTemplate.send("baeldung", order);
+        return null;
+        //return orderRepository.insert(order);
     }
 
     public ProductOrder updateOrder(String orderId, ProductOrder productOrder) throws Exception {
